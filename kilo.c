@@ -488,6 +488,10 @@ void editorProcessKeypress() {
         case ARROW_LEFT:
             editorMoveCursor(c);
             break;
+
+        default:
+            editorInsertChar(c);
+            break;
     }
 }
 
