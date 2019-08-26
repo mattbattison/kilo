@@ -650,7 +650,8 @@ void editorDrawStatusBar(struct abuf *ab) {
             E.filename ? E.filename : "[No Name]",
             E.numrows,
             E.dirty ? "(modified)" : "");
-    int rlen = snprintf(rstatus, sizeof(status), "%d/%d",
+    int rlen = snprintf(rstatus, sizeof(status), "%s | %d/%d",
+            E.syntax ? E.syntax->filetype : "no ft",
             E.cy + 1,
             E.numrows);
     if (len > E.screencols) len = E.screencols;
